@@ -1,0 +1,22 @@
+{
+    "name": "ngWebArch",
+    "description": "An angular seed of Web Arch Bootstrap3 Framework",
+    "version": "0.0.1",
+    "private": true,
+    "engines": {
+        "node": "0.10.x",
+        "npm": "1.2.x"
+    },
+    "dependencies": {
+        "express": ">3.0",
+        "grunt": "latest",
+        "grunt-cli": "latest",
+        "grunt-bower-task": "latest"
+    },
+    "devDependencies": {
+        "grunt-contrib-watch": "latest",
+        "grunt-contrib-jshint": "latest",
+        "grunt-nodemon": "latest",
+        "grunt-concurrent": "latest"
+    }
+}

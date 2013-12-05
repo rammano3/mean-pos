@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+<meta charset="utf-8" />
+<title>Webarch - Responsive Admin Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta content="" name="description" />
+<meta content="" name="author" />
+
+
+<link href="assets/plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="assets/plugins/jquery-slider/css/jquery.sidr.light.css" rel="stylesheet" type="text/css" media="screen"/>
+<!-- BEGIN CORE CSS FRAMEWORK -->
+<link href="assets/plugins/boostrapv3/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/plugins/boostrapv3/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/animate.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/toastr.css" rel="stylesheet" />
+<!-- END CORE CSS FRAMEWORK -->
+
+<!-- BEGIN CSS TEMPLATE -->
+<link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/responsive.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/custom-icon-set.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/customStyle.css" rel="stylesheet" type="text/css"/>
+<!-- END CSS TEMPLATE -->
+</head>
+<!-- END HEAD -->
+
+<!-- BEGIN BODY -->
+<body class="ng-cloak" data-ng-app="app" data-ng-controller="appController" ng-init="init()">
+<!-- INCLUDE HEADER -->
+<div data-ng-include="'/app/views/layout/header.html'"></div>
+<!-- BEGIN CONTAINER -->
+<div class="page-container row-fluid">
+  <!-- INCLUDE SIDEBAR -->
+  <div data-ng-include="'/app/views/layout/sidebar.html'"></div>
+
+  <!-- BEGIN PAGE CONTAINER-->
+  <div class="page-content" ng-class="classes.page_content">
+
+    <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+    <div id="portlet-config" class="modal hide">
+      <div class="modal-header">
+        <button data-dismiss="modal" class="close" type="button"></button>
+        <h3>Widget Settings</h3>
+      </div>
+      <div class="modal-body"> Widget settings form goes here </div>
+    </div>
+    <div class="clearfix"></div>
+
+    <div class="content">
+        <div data-ng-view class="fader-animation"></div>
+    </div>
+
+
+
+  </div>
+ </div>
+<!-- END CONTAINER -->
+
+<!-- BEGIN CHAT -->
+<div id="sidr">
+  <div class="chat-window-wrapper">
+    <div class="chat-header">
+      <div class="pull-left">
+        <input type="text" placeholder="search">
+      </div>
+      <div class="pull-right"> <a href="#" class="" >
+        <div class="iconset top-settings-dark "></div>
+        </a> </div>
+    </div>
+    <div class="side-widget">
+      <div class="side-widget-title">group chats</div>
+      <div class="side-widget-content">
+        <div id="groups-list">
+          <ul class="groups" >
+            <li><a href="#">
+              <div class="status-icon green"></div>
+              Office work</a></li>
+            <li><a href="#">
+              <div class="status-icon green"></div>
+              Personal vibes</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="side-widget">
+      <div class="side-widget-title">favourites</div>
+      <div id="favourites-list">
+        <div class="side-widget-content" >
+          <div class="user-details-wrapper active">
+            <div class="user-profile"> <img src="assets/img/profiles/d.jpg" data-src="assets/img/profiles/d.jpg" data-src-retina="assets/img/profiles/d2x.jpg" width="35" height="35"> </div>
+            <div class="user-details">
+              <div class="user-name"> Jane Smith </div>
+              <div class="user-more"> Hello you there? </div>
+            </div>
+            <div class="user-details-status-wrapper"> <span class="badge badge-important">3</span> </div>
+            <div class="user-details-count-wrapper">
+              <div class="status-icon green"></div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="user-details-wrapper">
+            <div class="user-profile"> <img src="assets/img/profiles/c.jpg" data-src="assets/img/profiles/c.jpg" data-src-retina="assets/img/profiles/c2x.jpg" width="35" height="35"> </div>
+            <div class="user-details">
+              <div class="user-name"> David Nester </div>
+              <div class="user-more"> Busy, Do not disturb </div>
+            </div>
+            <div class="user-details-status-wrapper">
+              <div class="clearfix"></div>
+            </div>
+            <div class="user-details-count-wrapper">
+              <div class="status-icon red"></div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="side-widget">
+      <div class="side-widget-title">more friends</div>
+      <div class="side-widget-content" id="friends-list">
+        <div class="user-details-wrapper">
+          <div class="user-profile"> <img src="assets/img/profiles/d.jpg" data-src="assets/img/profiles/d.jpg" data-src-retina="assets/img/profiles/d2x.jpg" width="35" height="35"> </div>
+          <div class="user-details">
+            <div class="user-name"> Jane Smith </div>
+            <div class="user-more"> Hello you there? </div>
+          </div>
+          <div class="user-details-status-wrapper"> </div>
+          <div class="user-details-count-wrapper">
+            <div class="status-icon green"></div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="user-details-wrapper">
+          <div class="user-profile"> <img src="assets/img/profiles/h.jpg" data-src="assets/img/profiles/h.jpg" data-src-retina="assets/img/profiles/h2x.jpg" width="35" height="35"> </div>
+          <div class="user-details">
+            <div class="user-name"> David Nester </div>
+            <div class="user-more"> Busy, Do not disturb </div>
+          </div>
+          <div class="user-details-status-wrapper">
+            <div class="clearfix"></div>
+          </div>
+          <div class="user-details-count-wrapper">
+            <div class="status-icon red"></div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="user-details-wrapper">
+          <div class="user-profile"> <img src="assets/img/profiles/c.jpg" data-src="assets/img/profiles/c.jpg" data-src-retina="assets/img/profiles/c2x.jpg" width="35" height="35"> </div>
+          <div class="user-details">
+            <div class="user-name"> Jane Smith </div>
+            <div class="user-more"> Hello you there? </div>
+          </div>
+          <div class="user-details-status-wrapper"> </div>
+          <div class="user-details-count-wrapper">
+            <div class="status-icon green"></div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="user-details-wrapper">
+          <div class="user-profile"> <img src="assets/img/profiles/h.jpg" data-src="assets/img/profiles/h.jpg" data-src-retina="assets/img/profiles/h2x.jpg" width="35" height="35"> </div>
+          <div class="user-details">
+            <div class="user-name"> David Nester </div>
+            <div class="user-more"> Busy, Do not disturb </div>
+          </div>
+          <div class="user-details-status-wrapper">
+            <div class="clearfix"></div>
+          </div>
+          <div class="user-details-count-wrapper">
+            <div class="status-icon red"></div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END CHAT -->
+<!-- END CONTAINER -->
+
+<!-- default template for bootstrap ui modal -->
+<script type="text/ng-template" id="modalGeneral.html">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button data-dismiss="modal" class="close" type="button"></button>
+                <h3>{{title}}</h3>
+            </div>
+            <div class="modal-body">
+                {{message}}
+                <ul>
+                    <li ng-repeat="item in items">
+                        <a ng-click="selected.item = item">{{ item }}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" ng-click="ok()">OK</button>
+                <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+            </div>
+        </div>
+    </div>
+</script>
+
+<!-- BEGIN CORE JS FRAMEWORK--> 
+<script src="assets/plugins/jquery-1.8.3.min.js" type="text/javascript"></script> 
+<script src="assets/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script> 
+<script src="assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script> 
+<script src="assets/plugins/breakpoints.js" type="text/javascript"></script> 
+<script src="assets/plugins/jquery-unveil/jquery.unveil.min.js" type="text/javascript"></script> 
+<script src="assets/plugins/jquery-block-ui/jqueryblockui.js" type="text/javascript"></script>
+<script src="Scripts/toastr.js"></script>
+<!-- END CORE JS FRAMEWORK --> 
+<!-- BEGIN PAGE LEVEL JS --> 	
+<script src="assets/plugins/jquery-slider/jquery.sidr.min.js" type="text/javascript"></script> 	
+<script src="assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script> 
+<script src="assets/plugins/pace/pace.min.js" type="text/javascript"></script>  
+<script src="assets/plugins/jquery-numberAnimate/jquery.animateNumbers.js" type="text/javascript"></script>
+<script src="assets/plugins/jquery.menu.custom.js" type="text/javascript"></script>
+
+<!-- END PAGE LEVEL PLUGINS --> 	
+
+<!-- BEGIN CORE TEMPLATE JS --> 
+<script src="assets/js/core.js" type="text/javascript"></script> 
+<script src="assets/js/demo.js" type="text/javascript"></script>
+<!-- END CORE TEMPLATE JS -->
+
+<!-- BEGIN CORE ANGULAR JS -->
+<script src="assets/plugins/angular/angular.min.js" type="text/javascript"></script>
+<script src="assets/plugins/angular/angular-animate.min.js" type="text/javascript"></script>
+<script src="assets/plugins/angular/angular-resource.min.js" type="text/javascript"></script>
+<script src="assets/plugins/angular/angular-route.min.js" type="text/javascript"></script>
+<script src="assets/plugins/angular/angular-touch.min.js" type="text/javascript"></script>
+<script src="assets/plugins/angular/ui-utils/jq.js" type="text/javascript"></script>
+<script src="assets/scripts/ui-bootstrap-tpls-0.8.0-SNAPSHOT.min.js" type="text/javascript"></script>
+
+<!-- END CORE ANGULAR JS -->
+
+<!-- App libraries -->
+<!-- Must load app.js first; the others can load in any order -->
+<script src="app/app.js"></script>
+<script src="app/environment.js"></script>
+<script src="app/config.js"></script>
+
+<script src="app/controllers/appController.js"></script>
+<script src="app/controllers/headerController.js"></script>
+<script src="app/controllers/sideBarController.js"></script>
+<script src="app/controllers/homeController.js"></script>
+<script src="app/controllers/routeController.js"></script>
+<script src="app/controllers/testController.js"></script>
+
+<script src="app/directives/directives.js"></script>
+<script src="app/filters/filters.js"></script>
+
+<script src="app/services/logger.js"></script>
+<script src="app/services/routes.js"></script>
+<script src="app/services/util.js"></script>
+
+<!-- omit appRun.js in tests -->
+<script src="app/appRun.js"></script>
+
+<script src="http://localhost:35729/livereload.js" type="text/javascript"></script>
+
+
+</body>
+</html>
