@@ -1,0 +1,7 @@
+extends layouts/default
+
+block content
+  section(data-ng-view)
+  toaster-container(toaster-options="{'position-class': 'toast-bottom-right'}")
+  script(type="text/javascript").
+    window.user = !{user};

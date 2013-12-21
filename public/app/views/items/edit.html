@@ -1,0 +1,26 @@
+<section data-ng-controller="ItemsController" data-ng-init="findOne()">
+    <form class="form-horizontal" data-ng-submit="update()">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" data-ng-model="item.title" id="title" placeholder="Title" required>
+        </div>
+        <div class="form-group">
+            <label for="name">Price</label>
+            <!-- TODO: update to number check bootstrap docs-->
+            <input type="text" class="form-control" data-ng-model="item.price" id="price" placeholder="Price" required>
+        </div>
+        <div class="form-group">
+            <label for="name">Category
+                <input type="text" class="form-control" data-ng-model="item.category" id="category" placeholder="Category" required>
+                <!-- TODO: select>
+                    will do ng repeat here
+                    <option>test</option>
+                </select-->
+        </div>
+        <div class="form-group">
+            <div class="controls">
+                <input type="submit" class="btn">
+            </div>
+        </div>
+    </form>
+</section>

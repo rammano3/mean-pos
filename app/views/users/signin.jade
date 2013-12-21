@@ -1,0 +1,18 @@
+extends auth
+
+block auth
+  form.signin.form-horizontal(action="/users/session", method="post",, role="form")
+    div.alert.alert-danger= message
+    .form-group
+      label(for='email') Email
+      input.form-control#email(type='text', name="email", placeholder='Email')
+
+    .form-group
+      label(for='password') Password
+      input.form-control#password(type='password', name="password", placeholder='Password')
+
+    .form-group
+      button.btn.btn-primary(type='submit') Sign in
+      &nbsp;
+      | or&nbsp;
+      a.show-signup(href="/signup") Sign up

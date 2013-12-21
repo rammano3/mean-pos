@@ -7,7 +7,8 @@
     // Those with a name will be visible in the navigation bar.
     // Those with a token (e.g., :tag) are used for sub-navigation within a view.
     var navRoutes = [
-        { name: 'Home', path: '/', templateUrl: viewBase + 'home.html', controller: 'homeController' },
+        //{ name: 'Home', path: '/', templateUrl: viewBase + 'home.html', controller: 'homeController' },
+        { name: 'Home', path: '/', templateUrl: viewBase + '/dash/order.html', controller: 'orderController' },
 
         { name: 'form_elements', path: '/form_elements', templateUrl: viewBase + 'form_elements.html' },
 

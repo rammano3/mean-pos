@@ -1,14 +1,33 @@
 {
-    "name": "ngWebArch",
-    "description": "An angular seed of Web Arch Bootstrap3 Framework",
+    "name": "mean-pos",
+    "description": "MEAN POS - A Modern Stack: MongoDB, ExpressJS, AngularJS, NodeJS. (BONUS: Passport User Support).",
     "version": "0.0.1",
     "private": true,
     "engines": {
         "node": "0.10.x",
         "npm": "1.2.x"
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rammano3/mean-pos.git"
+    },
     "dependencies": {
-        "express": ">3.0",
+        "express": "latest",
+        "jade": "latest",
+        "mongoose": "latest",
+        "connect-mongo": "latest",
+        "connect-flash": "latest",
+        "passport": "latest",
+        "passport-local": "latest",
+        "passport-facebook": "latest",
+        "passport-twitter": "latest",
+        "passport-github": "latest",
+        "passport-google-oauth": "latest",
+        "underscore": "latest",
+        "async": "latest",
+        "view-helpers": "latest",
+        "mean-logger": "latest",
+        "forever": "latest",
         "grunt": "latest",
         "grunt-cli": "latest",
         "grunt-bower-task": "latest"

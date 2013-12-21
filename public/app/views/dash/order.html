@@ -1,0 +1,18 @@
+<section data-ng-init="findItems()">
+    <div class="col-md-3 col-sm-6 spacing-bottom-sm" data-ng-repeat="item in items">
+        <div class="tiles blue added-margin added-bottom-margin" ng-click="addToOrder(item)">
+            <div class="tiles-body">
+                <div class="controller tiles-title">
+                    {{item.category}}
+                </div>
+                <div class="tiles-title">
+                    {{item.price | currency}}
+                </div>
+                <div class="heading">
+                    {{item.name}}
+                </div>
+                <div class="description"><span class="text-white mini-description ">9.10% ABV <br> <span class="blend">American Double / Imperial IPA</span></span></div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -91,10 +91,46 @@
 .modal{
     display: block;
 }
-/*sidebar animations*/
+/*sidebar animations
 .page-sidebar{
     transition: width 1s;
 }
 .page-content{
     transition: margin-left 1s;
+}*/
+.page-sidebar.mini {
+    background-color: #1b1e24 !important;
+    position:fixed;
+}
+
+/* order dashboard tiles */
+.added-bottom-margin{
+    margin-bottom: 20px;
+}
+.sidebar-right{
+    /*display:none;*/
+    position: fixed;
+    top:0;
+    right:0;
+    z-index: 1000;
+}
+.body-right-margin{margin-right:260px !important;}
+.header-seperation-right{
+    width: 260px;
+    display: block;
+    float: right;
+    height: 60px;
+    background-color: #22262e;
+}
+.tiles .tiles-body {
+    padding: 10px 18px 15px 24px;
+}
+.chat-header input{
+    border: 1px solid #000000;
+}
+.tiles.orange{
+    background-color: #e67E22;
+}
+.tiles.beer{
+    background-color: #E74C3C;
 }

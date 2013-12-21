@@ -28,7 +28,7 @@
 <!-- END HEAD -->
 
 <!-- BEGIN BODY -->
-<body class="ng-cloak" data-ng-app="app" data-ng-controller="appController" ng-init="init()">
+<body class="ng-cloak" data-ng-app="app" data-ng-controller="appController" ng-init="init()" ng-class="classes.body_right_margin">
 <!-- INCLUDE HEADER -->
 <div data-ng-include="'/app/views/layout/header.html'"></div>
 <!-- BEGIN CONTAINER -->
@@ -59,125 +59,9 @@
  </div>
 <!-- END CONTAINER -->
 
-<!-- BEGIN CHAT -->
-<div id="sidr">
-  <div class="chat-window-wrapper">
-    <div class="chat-header">
-      <div class="pull-left">
-        <input type="text" placeholder="search">
-      </div>
-      <div class="pull-right"> <a href="#" class="" >
-        <div class="iconset top-settings-dark "></div>
-        </a> </div>
-    </div>
-    <div class="side-widget">
-      <div class="side-widget-title">group chats</div>
-      <div class="side-widget-content">
-        <div id="groups-list">
-          <ul class="groups" >
-            <li><a href="#">
-              <div class="status-icon green"></div>
-              Office work</a></li>
-            <li><a href="#">
-              <div class="status-icon green"></div>
-              Personal vibes</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="side-widget">
-      <div class="side-widget-title">favourites</div>
-      <div id="favourites-list">
-        <div class="side-widget-content" >
-          <div class="user-details-wrapper active">
-            <div class="user-profile"> <img src="assets/img/profiles/d.jpg" data-src="assets/img/profiles/d.jpg" data-src-retina="assets/img/profiles/d2x.jpg" width="35" height="35"> </div>
-            <div class="user-details">
-              <div class="user-name"> Jane Smith </div>
-              <div class="user-more"> Hello you there? </div>
-            </div>
-            <div class="user-details-status-wrapper"> <span class="badge badge-important">3</span> </div>
-            <div class="user-details-count-wrapper">
-              <div class="status-icon green"></div>
-            </div>
-            <div class="clearfix"></div>
-          </div>
-          <div class="user-details-wrapper">
-            <div class="user-profile"> <img src="assets/img/profiles/c.jpg" data-src="assets/img/profiles/c.jpg" data-src-retina="assets/img/profiles/c2x.jpg" width="35" height="35"> </div>
-            <div class="user-details">
-              <div class="user-name"> David Nester </div>
-              <div class="user-more"> Busy, Do not disturb </div>
-            </div>
-            <div class="user-details-status-wrapper">
-              <div class="clearfix"></div>
-            </div>
-            <div class="user-details-count-wrapper">
-              <div class="status-icon red"></div>
-            </div>
-            <div class="clearfix"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="side-widget">
-      <div class="side-widget-title">more friends</div>
-      <div class="side-widget-content" id="friends-list">
-        <div class="user-details-wrapper">
-          <div class="user-profile"> <img src="assets/img/profiles/d.jpg" data-src="assets/img/profiles/d.jpg" data-src-retina="assets/img/profiles/d2x.jpg" width="35" height="35"> </div>
-          <div class="user-details">
-            <div class="user-name"> Jane Smith </div>
-            <div class="user-more"> Hello you there? </div>
-          </div>
-          <div class="user-details-status-wrapper"> </div>
-          <div class="user-details-count-wrapper">
-            <div class="status-icon green"></div>
-          </div>
-          <div class="clearfix"></div>
-        </div>
-        <div class="user-details-wrapper">
-          <div class="user-profile"> <img src="assets/img/profiles/h.jpg" data-src="assets/img/profiles/h.jpg" data-src-retina="assets/img/profiles/h2x.jpg" width="35" height="35"> </div>
-          <div class="user-details">
-            <div class="user-name"> David Nester </div>
-            <div class="user-more"> Busy, Do not disturb </div>
-          </div>
-          <div class="user-details-status-wrapper">
-            <div class="clearfix"></div>
-          </div>
-          <div class="user-details-count-wrapper">
-            <div class="status-icon red"></div>
-          </div>
-          <div class="clearfix"></div>
-        </div>
-        <div class="user-details-wrapper">
-          <div class="user-profile"> <img src="assets/img/profiles/c.jpg" data-src="assets/img/profiles/c.jpg" data-src-retina="assets/img/profiles/c2x.jpg" width="35" height="35"> </div>
-          <div class="user-details">
-            <div class="user-name"> Jane Smith </div>
-            <div class="user-more"> Hello you there? </div>
-          </div>
-          <div class="user-details-status-wrapper"> </div>
-          <div class="user-details-count-wrapper">
-            <div class="status-icon green"></div>
-          </div>
-          <div class="clearfix"></div>
-        </div>
-        <div class="user-details-wrapper">
-          <div class="user-profile"> <img src="assets/img/profiles/h.jpg" data-src="assets/img/profiles/h.jpg" data-src-retina="assets/img/profiles/h2x.jpg" width="35" height="35"> </div>
-          <div class="user-details">
-            <div class="user-name"> David Nester </div>
-            <div class="user-more"> Busy, Do not disturb </div>
-          </div>
-          <div class="user-details-status-wrapper">
-            <div class="clearfix"></div>
-          </div>
-          <div class="user-details-count-wrapper">
-            <div class="status-icon red"></div>
-          </div>
-          <div class="clearfix"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- END CHAT -->
+<!-- INCLUDE SIDEBAR RIGHT -->
+<div data-ng-include="'/app/views/layout/sidebar-right.html'"></div>
+
 <!-- END CONTAINER -->
 
 <!-- default template for bootstrap ui modal -->
@@ -247,9 +131,12 @@
 <script src="app/controllers/appController.js"></script>
 <script src="app/controllers/headerController.js"></script>
 <script src="app/controllers/sideBarController.js"></script>
+<script src="app/controllers/customerController.js"></script>
 <script src="app/controllers/homeController.js"></script>
 <script src="app/controllers/routeController.js"></script>
 <script src="app/controllers/testController.js"></script>
+<script src="app/controllers/orderController.js"></script>
+<script src="app/controllers/itemsController.js"></script>
 
 <script src="app/directives/directives.js"></script>
 <script src="app/filters/filters.js"></script>
@@ -257,6 +144,8 @@
 <script src="app/services/logger.js"></script>
 <script src="app/services/routes.js"></script>
 <script src="app/services/util.js"></script>
+<script src="app/services/global.js"></script>
+<script src="app/services/items.js"></script>
 
 <!-- omit appRun.js in tests -->
 <script src="app/appRun.js"></script>

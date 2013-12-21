@@ -3,7 +3,7 @@
     <div class="header navbar navbar-inverse ">
         <!-- BEGIN TOP NAVIGATION BAR -->
         <div class="navbar-inner">
-            <div class="header-seperation" ng-show="MainMenuToggled">
+            <div class="header-seperation slide-animation" ng-show="MainMenuToggled">
                 <ul class="nav pull-left notifcation-center" id="main-menu-toggle-wrapper" style="display:none">
                     <li class="dropdown"> <a id="main-menu-toggle" href="#main-menu"  class="" >
                         <div class="iconset top-menu-toggle-white"></div>
@@ -23,6 +23,10 @@
                         <div class="iconset top-chat-white "></div>
                     </a> </li>
                 </ul>
+            </div>
+            <!-- END TOP NAVIGATION MENU -->
+            <div class="header-seperation-right " ng-show="SideRightToggled">
+
             </div>
             <!-- END RESPONSIVE MENU TOGGLER -->
             <div class="header-quick-nav" >
@@ -48,7 +52,7 @@
                         </div>
                     </ul>
                 </div>
-                <!-- END TOP NAVIGATION MENU -->
+
                 <!-- BEGIN CHAT TOGGLER -->
                 <div class="pull-right">
                     <div class="chat-toggler">
@@ -110,13 +114,13 @@
                             <div class="user-details">
                                 <div class="username">
                                     <span class="badge badge-important">3</span>
-                                    John <span class="bold">Smith</span>
+                                    Bar <span class="bold">Restaurant</span>
                                 </div>
                             </div>
                             <div class="iconset top-down-arrow"></div>
                         </a>
                         <div class="profile-pic">
-                            <img alt="" src="assets/img/profiles/avatar_small.jpg" data-src="assets/img/profiles/avatar_small.jpg" data-src-retina="assets/img/profiles/avatar_small2x.jpg" width="35" height="35" />
+                            <img alt="" src="assets/img/profiles/beer_small.jpg" data-src="assets/img/profiles/beer_small.jpg" data-src-retina="assets/img/profiles/beer_small2x.jpg" width="35" height="35" />
                         </div>
                     </div>
                     <ul class="nav quick-section ">
@@ -125,34 +129,23 @@
                                 <div class="iconset top-settings-dark "></div>
                             </a>
                             <ul class="dropdown-menu  pull-right" role="menu" aria-labelledby="dropdownMenu">
-                              <li><a href="user-profile.html"> My Account</a>
-                              </li>
-                              <li><a href="calender.html">My Calendar</a>
-                              </li>
-                              <li><a href="email.html"> My Inbox&nbsp;&nbsp;<span class="badge badge-important animated bounceIn">2</span></a>
+                              <li><a href=""> My Account</a>
                               </li>
                               <li class="divider"></li>
-                              <li><a href="login.html"><i class="icon-off"></i>&nbsp;&nbsp;Log Out</a></li>
+                              <li><a href=""><i class="icon-off"></i>&nbsp;&nbsp;Log Out</a></li>
                            </ul>
                         </li-->
                         <li class="quicklinks"> <span class="h-seperate"></span></li>
                         <li class="quicklinks">
-                            <a id="chat-menu-toggle" href="#sidr" class="chat-menu-toggle" ><div class="iconset top-chat-dark "><span class="badge badge-important hide" id="chat-message-count">1</span></div>
+                            <a id="chat-menu-toggle" ng-click="toggleSideRight()" href="" class="chat-menu-toggle" ><div class="icon-group" style="color: rgb(39, 50, 56);font-size: 20px;"><span class="badge badge-important hide" id="chat-message-count">12</span></div>
                             </a>
-                            <div class="simple-chat-popup chat-menu-toggle hide" >
-                                <div class="simple-chat-popup-arrow"></div><div class="simple-chat-popup-inner">
-                                <div style="width:100px">
-                                    <div class="semi-bold">Title</div>
-                                    <div class="message">Notification Text</div>
-                                </div>
-                            </div>
-                            </div>
                         </li>
                     </ul>
                 </div>
                 <!-- END CHAT TOGGLER -->
             </div>
             <!-- END TOP NAVIGATION MENU -->
+
         </div>
         <!-- END TOP NAVIGATION BAR -->
     </div>

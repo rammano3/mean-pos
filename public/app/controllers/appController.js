@@ -7,8 +7,9 @@
     function controller($rootScope, $scope, logger, util) {
 
         $rootScope.name = "app";
-        $scope.MainMenuToggled = false; //setting to false because it immediately reverses boolean. want it to show on default.
-        $scope.classes = {};
+        $scope.MainMenuToggled = true; //setting to true because it immediately reverses boolean. want it to hide on default.
+        $scope.SideRightToggled = true; //setting to false true it immediately reverses boolean. want it to show on default.
+        $scope.classes = {body_right_margin : "body-right-margin"};
 
         util.logger.info("App Initialized");
 
@@ -48,6 +49,13 @@
             }
         }
 
-
+        $scope.toggleSideRight = function(){
+            $scope.SideRightToggled = !$scope.SideRightToggled;
+            if($scope.SideRightToggled){
+                $scope.classes.body_right_margin = "body-right-margin";
+            }else{
+               $scope.classes.body_right_margin = "";
+            }
+        }
     }
 })();

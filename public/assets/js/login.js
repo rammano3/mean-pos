@@ -3,11 +3,11 @@ $(document).ready(function() {
                 focusInvalid: false, 
                 ignore: "",
                 rules: {
-                    txtusername: {
+                    email: {
                         minlength: 2,
                         required: true
                     },
-                    txtpassword: {
+                    password: {
                         required: true,
                     }
                 },
