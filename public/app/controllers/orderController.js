@@ -1,20 +1,10 @@
-angular.module('app').controller('orderController', ['$scope','Items', 'util', '$modal', function ($scope, Items, util, $modal) {
+angular.module('app').controller('orderController', ['$scope','Items', 'Order', 'util', '$modal', function ($scope, Items, Order, util, $modal) {
 
     $scope.order = [];
 
     $scope.addToOrder = function(item){
-        util.logger.info("addToOrder "+item.name);
-        /*var newItem = true;
-        angular.forEach($scope.order, function(orderItem) {
-            if(item.name == orderItem.name)
-            {
-              orderItem.quantity += 1;
-              newItem = false;
-            }
-        });
-        if(newItem){
-            $scope.order.push({name: item.name, quantity: 1});
-        }*/
+        util.logger.info(item.name);
+        Order.addToOrder(item);
     };
 
     $scope.findItems = function(query) {

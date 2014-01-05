@@ -1,3 +1,7 @@
+body{
+    height:100%;
+}
+
 /*Angular ng-include, ng-view, ng-repeat shuffle animations*/
 .shuffle-animation.ng-enter,
 .shuffle-animation.ng-leave {
@@ -87,6 +91,34 @@
 .dissolve-animation.ng-hide-remove {
     opacity: 0;
 }
+
+.slideup-animation.ng-hide-remove {
+
+    display: inline!important;
+    position: absolute;
+    right: 200px;
+    bottom: -25px;
+}
+
+.slideup-animation.ng-hide-remove,
+.slideup-animation.ng-hide-add {
+    -webkit-transition: 0.2s linear all;
+    -moz-transition: 0.2s linear all;
+    -o-transition: 0.2s linear all;
+    transition: 0.2s linear all;
+}
+
+.slideup-animation.ng-hide-remove.ng-hide-remove-active,
+.slideup-animation.ng-hide-add {
+    right: 200px;
+    bottom: -25px;
+}
+
+.slideup-animation.ng-hide-add.ng-hide-add-active,
+.slideup-animation.ng-hide-remove {
+    right: 200px;
+    bottom: -800px;
+}
 /* Modal bootstrap3 angular-ui fix */
 .modal{
     display: block;
@@ -98,34 +130,181 @@
 .page-content{
     transition: margin-left 1s;
 }*/
+.page-content{
+    height: 100%;
+    min-height: 500px;
+}
 .page-sidebar.mini {
     background-color: #1b1e24 !important;
-    position:fixed;
+    /*position:fixed;*/
 }
-
-/* order dashboard tiles */
 .added-bottom-margin{
     margin-bottom: 20px;
 }
 .sidebar-right{
     /*display:none;*/
+    width:200px;
+    height: 100%;
     position: fixed;
     top:0;
     right:0;
     z-index: 1000;
 }
-.body-right-margin{margin-right:260px !important;}
+.body-right-margin{margin-right:200px !important;}
 .header-seperation-right{
-    width: 260px;
+    width: 200px;
     display: block;
     float: right;
     height: 60px;
     background-color: #22262e;
 }
+
+/* renaming chat-window to customer-window */
+/* Sidebar chat and elements */
+.customer-window-wrapper{
+    font-family: 'Open Sans';
+    font-size:13px;
+}
+.customer-window-wrapper .footer-widget{
+    width: 200px;
+    padding: 5px 20px;
+    border-top: 1px solid #0090d9;
+}
+.customer-window-wrapper .customer-header{
+    height:58px;
+}
+
+.customer-window-wrapper  input[type="text"], .customer-window-wrapper input[type="password"], .customer-window-wrapper input[type="date"], .customer-window-wrapper input[type="datetime"], .customer-window-wrapper input[type="email"], .customer-window-wrapper input[type="number"], .customer-window-wrapper input[type="search"], .customer-window-wrapper input[type="tel"], .customer-window-wrapper input[type="time"], .customer-window-wrapper input[type="url"], .customer-window-wrapper textarea, .customer-window-wrapper select{
+    background-color:#0d0f12;
+    height:28px;
+}
+.customer-header  input[type="text"]{
+    margin: 15px 0 15px 14px;
+    width:135px;
+}
+.customer-header .iconset{
+    margin: 20px 15px;
+}
+
+.customer-window-wrapper .side-widget{
+    /*margin-top:15px;*/
+    display:block;
+    padding-left:15px;
+    padding-right:15px;
+}
+.customer-window-wrapper .side-widget-title{
+    color: #808285;
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    text-align: center;
+    padding-left: 30px;
+    padding-right: 30px;
+
+}
+.customer-window-wrapper .side-widget-content{
+    display:block;
+}
+.customer-window-wrapper  .side-widget-content  ul.groups{
+    list-style:none;
+    margin:0;
+    margin-top:10px;
+    padding-left:0;
+}
+.customer-window-wrapper  .side-widget-content ul.groups li{
+    line-height:25px;
+}
+.customer-window-wrapper  .side-widget-content  ul.groups > li > a{
+    color: #fff;
+    font-size: 13px;
+    padding: 5px 31px;
+}
+.customer-window-wrapper  .side-widget-content ul.groups > li > a:hover{
+    text-decoration:none;
+}
+.customer-window-wrapper .user-details-wrapper{
+    display:block;
+    margin:8px;
+    padding:10px;
+    border-radius:3px;
+}
+.customer-window-wrapper .user-details-wrapper .status-icon {
+    margin-right:0px;
+}
+.customer-window-wrapper .user-details-wrapper{
+   /* background-color: #6f7b8a;*/
+    background-color: #372b32;
+    min-height: 75px;
+}
+.customer-window-wrapper .user-details-wrapper.active{
+    background-color: rgb(31, 56, 83);
+}
+.customer-window-wrapper .user-details-wrapper.active:hover{
+    background-color: rgb(31, 56, 83);
+    cursor:pointer;
+}
+.customer-window-wrapper .user-details-wrapper:hover{
+    background-color: rgb(31, 56, 83);
+    cursor:pointer;
+}
+.customer-window-wrapper .user-details-wrapper > .user-profile{
+    display:inline-block;
+    float:left;
+    border-radius: 100px 100px 100px 100px;
+    height: 35px;
+    overflow: hidden;
+    width: 35px;
+    margin-right:13px;
+}
+.customer-window-wrapper .user-details-wrapper > .user-details{
+  /*  display:inline-block;
+    float:left;*/
+}
+
+.customer-window-wrapper .user-details-wrapper > .user-details > .user-name{
+    display:block;
+    color:#fff;
+    line-height: 15px;
+}
+.customer-window-wrapper .user-details-wrapper > .user-details > .user-more{
+    position: absolute;
+    bottom: 10px;
+    display:block;
+    color:#747b89;
+    font-size:11px;
+    width:120px;
+}
+.customer-window-wrapper .user-details-status-wrapper {
+    display:inline-block;
+    float:left;
+    min-width:32px;
+    margin-top:8px;
+}
+.customer-window-wrapper .user-details-count-wrapper {
+    display:inline-block;
+    float:left;
+    margin-top:8px;
+}
+.customer-window-wrapper .money{
+    color: #0aa699;
+    font-size: 10pt;
+}
+.customer-window-wrapper .item-count{
+    padding:1px 4px;
+}
+/* order dashboard tiles */
+.tiles{
+  /*  min-height: 160px;*/
+}
 .tiles .tiles-body {
     padding: 10px 18px 15px 24px;
 }
-.chat-header input{
+.tiles .heading {
+    line-height: 25px;
+    padding-bottom:5px;
+}
+.customer-header input{
     border: 1px solid #000000;
 }
 .tiles.orange{
@@ -133,4 +312,47 @@
 }
 .tiles.beer{
     background-color: #E74C3C;
+}
+
+/*font colors*/
+.green{
+    color: #0aa699;
+}
+.tab-widget{
+    width: auto;
+    position: absolute;
+    right: 200px;
+    bottom: -25px;
+}
+
+.left-nav-scroller {
+    /*white-space: pre-line;*/
+    height: 480px;
+  /*  width: 480px;*/
+    overflow: hidden;
+    position: relative;
+}
+
+.customer-header .header-icon{
+    margin:20px 15px;
+    font-size: 15px;
+
+}
+.footer-widget-placeholder{
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.footer-widget button{
+    margin-top:12px;
+}
+.footer-widget .side-widget-content{
+    padding-top: 5px;
+}
+.tab-widget .btn-cons{
+     min-width: 0px;
+ }
+.footer-widget .btn-cons{
+    min-width: 0px;
 }

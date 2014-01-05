@@ -6,7 +6,7 @@
     'use strict';
     
     // Create the 'app' module
-    var app = angular.module('app', ['ngRoute', 'ngAnimate', 'ngResource', 'ui.bootstrap', 'ui.jq']);
+    var app = angular.module('app', ['ngRoute', 'ngAnimate', 'ngResource', 'ui.bootstrap', 'ui.jq', 'perfect_scrollbar']);
 
     app.routeResolve = {};
 

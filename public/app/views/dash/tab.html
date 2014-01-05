@@ -1,14 +1,46 @@
-<section>
-    <div class="well">
-        Tab
-        <table class="table-condensed" style="font-size:small">
-            <tr><th>Item</th><th>Qty</th></tr>
-            <tr data-ng-repeat="item in order">
-                <td>{{item.name}}</a></td>
-                <td>{{item.quantity}}</td>
-            </tr>
-        </table>
-        <p></p>
-        <a href="#">Pay</a>
+<div class="col-md-12 col-sm-6 spacing-bottom tab-widget slideup-animation" ng-show="viewTab">
+    <div class="widget">
+        <div class="widget-title dark">
+            {{ activeOrder.customerName }}'s Tab
+        </div>
+        <div class="widget-body">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th  class="unseen text-center">QTY</th>
+                    <th class="text-left">DESC</th>
+                    <th  class="text-right">PRICE</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in activeOrder.items | groupItemsTab" >
+                    <td class="unseen text-center">{{ item.quantity }}</td>
+                    <td>{{ item.name }}</td>
+                    <td class="text-right">$6.00</td>
+                </tr>
+                <tr>
+                    <td  rowspan="4"><h4 class="semi-bold"></td>
+                    <td class="text-right"><strong>Subtotal</strong></td>
+                    <td class="text-right">$18.00</td>
+                </tr>
+                <tr>
+                    <td class="text-right no-border">
+                        <div class="well well-small">
+                            <strong>Total</strong>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <strong>$18.00</strong>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+                <div class="pull-left" style="margin-top: -35px;">
+                    <button type="button" class="btn btn-white btn-cons "><i class="icon-tags"></i> Discount</button>
+                </div>
+                <div class="pull-right" style="margin-top: -35px;">
+                    <button type="button" class="btn btn-primary btn-cons pull-right"><i class="icon-credit-card"></i>&nbsp;Pay</button>
+                </div>
+        </div>
     </div>
-</section>
+</div>

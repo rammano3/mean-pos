@@ -1,62 +1,57 @@
 <!-- BEGIN CHAT -->
 <div ng-controller="customerController">
     <div id="sidrxxx" class="sidebar-right" ng-show="SideRightToggled">
-        <div class="chat-window-wrapper">
-            <div class="chat-header">
+        <div class="customer-window-wrapper">
+            <div class="customer-header">
                 <div class="pull-left">
                     <input type="text" placeholder="search">
                 </div>
-                <div class="pull-right"> <a href="#" class="" >
-                    <div class="iconset top-settings-dark "></div>
+                <div class="pull-right header-icon"> <a href="" class="" ng-click="addCustomer()">
+                    <i class="icon-plus-sign" style="color:#6f7b8a;"></i>
+                    <!--div class="iconset top-settings-dark "></div-->
                 </a> </div>
             </div>
             <div class="side-widget">
-                <div class="side-widget-title">Customers</div>
+                <div class="side-widget-title">Tabs</div>
                 <div id="favourites-list">
-                    <div class="side-widget-content" >
-                        <div class="user-details-wrapper">
-                            <div class="user-details">
-                                <div class="user-name"> Jane Smith </div>
-                                <div class="user-more"> 7 Items <b>$34.50</b> </div>
-                            </div>
-                            <div class="user-details-status-wrapper"> <span class="badge badge-important">7</span> </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="user-details-wrapper active">
-                            <div class="user-details">
-                                <div class="user-name"> David Nester </div>
-                                <div class="user-more"> 2 Items <b>$6.00</b> </div>
-                            </div>
-                            <div class="user-details-status-wrapper">
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="user-details-wrapper">
-                            <div class="user-details">
-                                <div class="user-name"> Rupert McGee </div>
-                                <div class="user-more"> 3 Items <b>$9.00</b> </div>
-                            </div>
-                            <div class="user-details-status-wrapper">
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="side-widget">
-                <div class="side-widget-title"><b>David Nester's</b> Tab</div>
-                <div class="side-widget-content" id="friends-list">
-                     <div>
-                         Beer <span class="badge badge-important">7</span>
-                     </div>
-                     <div>
-                        Merch <span class="badge badge-important">1</span>
-                    </div>
-                </div>
+                    <perfect-scrollbar class="left-nav-scroller" wheel-propagation="true" wheel-speed="50">
 
+                    <div class="side-widget-content row" >
+                        <div class="user-details-wrapper col-md-5" ng-repeat="order in orders" ng-click="selectCustomer(order)" ng-class="order.activeClass">
+                            <div class="user-details">
+                                <div class="user-name"> {{ order.customerName }} </div>
+                                <div class="user-more"> <span class="label label-info item-count">{{ order.orderQuantity }}</span> |<span class="money"><b>$</b>{{ order.orderTotal }}</span> </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                  </perfect-scrollbar>
+                </div>
             </div>
+            <div class="footer-widget">
+                <div ng-show="activeOrder.customerName">
+                    <div class="side-widget-title"><b>{{ activeOrder.customerName }}'s</b> Tab ${{ activeOrder.orderTotal }}</div>
+                    <div class="side-widget-content" id="friends-list">
+                        <div class="pull-left">
+                            Beer <span class="label label-info">{{ activeOrder.orderQuantity }}</span>
+                        </div>
+                        <div class="pull-right">
+                            Merch <span class="label label-success">0</span>
+                        </div>
+                        <button type="button" class="btn btn-info btn-cons" ng-click="viewTab = !viewTab"><i class="icon-paste"></i>Tab</button>
+                        <span>$14.50</span>
+                    </div>
+                </div>
+                <div ng-hide="activeOrder.customerName" class="footer-widget-placeholder">
+                    No Customer Selected
+                    <button type="button" class="btn btn-info btn-cons" ng-click="addCustomer()"><i class="icon-user"></i> New Tab</button>
+                </div>
+            </div>
+            <!--order-tab class="slideup-animation" ng-show="viewTab"></order-tab-->
+            <!-- make ng include... doesnt need to be directive for live data i guess -->
+            <div data-ng-include="'/app/views/dash/tab.html'"></div>
+
+
         </div>
     </div>
 </div>

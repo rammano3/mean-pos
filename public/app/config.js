@@ -3,7 +3,7 @@
     
     // configure toastr for this app
     toastr.options.timeOut = 2000; // 2 second toast timeout
-    toastr.options.positionClass = 'toast-bottom-right';
+    toastr.options.positionClass = 'toast-bottom-left';
 
     var app = angular.module('app');
     

@@ -8,6 +8,28 @@
         };
     }])
 
+    /**
+     * Order Specific
+      */
+        /*
+    .directive('orderTab', ['Order', function(Order) {
+        return {
+            restrict: "E",
+            scope: {},
+            templateUrl: "app/views/dash/tab.html",
+            link: function(scope) {
+                scope.$watch(Order.customerOrder, function() {
+                    scope.order = Order.customerOrder;
+                    console.log('ordertassss order',scope.order);
+                });
+                scope.order = Order.customerOrder;
+                console.log('ordertab order',scope.order);
+                console.log('ordertab testr',Order.testr);
+                return scope;
+            }
+        };
+    }])*/
+
    /**
     *  DOM effects
     *  guess i want them global, will module out when it gets big

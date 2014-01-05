@@ -18,5 +18,12 @@
                    : "";
         };
     });
+
+    angular.module('app').filter('groupItemsTab', function () {
+        return function (text) {
+            console.log('groupItemTab',text);
+            return text;
+        };
+    });
     
 })();
