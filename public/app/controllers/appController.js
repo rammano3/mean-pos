@@ -10,8 +10,8 @@
         $scope.MainMenuToggled = true; //setting to true because it immediately reverses boolean. want it to hide on default.
         $scope.SideRightToggled = true; //setting to false true it immediately reverses boolean. want it to show on default.
         $scope.classes = {body_right_margin : "body-right-margin"};
+        $scope.apploaded = false;
 
-        util.logger.info("App Initialized");
 
         //route change event handlers
         $rootScope.$on('$routeChangeError', function (event, current, previous, rejection) {
@@ -33,7 +33,12 @@
         });//init in normal menu mode
 
         $scope.init = function(){
+            util.logger.info("App Initialized");
             $scope.toggleMainMenu();
+        }
+
+        $rootScope.appInit = function() {
+            $scope.apploaded = true;
         }
 
         $scope.toggleMainMenu = function(){

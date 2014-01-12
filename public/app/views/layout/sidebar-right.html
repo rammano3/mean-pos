@@ -4,7 +4,7 @@
         <div class="customer-window-wrapper">
             <div class="customer-header">
                 <div class="pull-left">
-                    <input type="text" placeholder="search">
+                    <input type="text" placeholder="search" ng-model="search.$" style="color:#9C9C9C">
                 </div>
                 <div class="pull-right header-icon"> <a href="" class="" ng-click="addCustomer()">
                     <i class="icon-plus-sign" style="color:#6f7b8a;"></i>
@@ -13,14 +13,13 @@
             </div>
             <div class="side-widget">
                 <div class="side-widget-title">Tabs</div>
-                <div id="favourites-list">
-                    <perfect-scrollbar class="left-nav-scroller" wheel-propagation="true" wheel-speed="50">
-
-                    <div class="side-widget-content row" >
-                        <div class="user-details-wrapper col-md-5" ng-repeat="order in orders" ng-click="selectCustomer(order)" ng-class="order.activeClass">
+                <div id="favourites-list" customer-tabs-scroll>
+                  <perfect-scrollbar class="left-nav-scroller" wheel-propagation="true" wheel-speed="50" refresh-on-change="orders" scroll-bottom-on-change="true" >
+                    <div class="side-widget-content" >
+                        <div class="user-details-wrapper col-md-5" ng-repeat="orderTab in orders | filter:search" ng-click="selectCustomer(orderTab.customer)" ng-class="{active: orderTab.customer.customerID==activeOrder.customer.customerID}">
                             <div class="user-details">
-                                <div class="user-name"> {{ order.customerName }} </div>
-                                <div class="user-more"> <span class="label label-info item-count">{{ order.orderQuantity }}</span> |<span class="money"><b>$</b>{{ order.orderTotal }}</span> </div>
+                                <div class="user-name"> {{ orderTab.customer.customerName }} </div>
+                                <div class="user-more"> <span class="label label-info item-count">{{ orderTab.getTotalCount() }}</span> |<span class="money">{{ orderTab.getTotalPrice() | currency }}</span> </div>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -29,20 +28,20 @@
                 </div>
             </div>
             <div class="footer-widget">
-                <div ng-show="activeOrder.customerName">
-                    <div class="side-widget-title"><b>{{ activeOrder.customerName }}'s</b> Tab ${{ activeOrder.orderTotal }}</div>
+                <div ng-show="activeOrder.customer.customerName">
+                    <div class="side-widget-title"><b>{{ activeOrder.customer.customerName }}'s</b> Tab</div>
                     <div class="side-widget-content" id="friends-list">
                         <div class="pull-left">
-                            Beer <span class="label label-info">{{ activeOrder.orderQuantity }}</span>
+                            Beer <span class="label label-info">{{ activeOrder.getTotalCount() }}</span>
                         </div>
                         <div class="pull-right">
                             Merch <span class="label label-success">0</span>
                         </div>
-                        <button type="button" class="btn btn-info btn-cons" ng-click="viewTab = !viewTab"><i class="icon-paste"></i>Tab</button>
-                        <span>$14.50</span>
+                        <button type="button" class="btn btn-info btn-cons" ng-click="viewTab = !viewTab" style="float:left"><i class="icon-paste"></i>Tab</button>
+                        <h2 style="float:left">{{ activeOrder.getTotalPrice() | currency }}</h2>
                     </div>
                 </div>
-                <div ng-hide="activeOrder.customerName" class="footer-widget-placeholder">
+                <div ng-hide="activeOrder.customer.customerName" class="footer-widget-placeholder">
                     No Customer Selected
                     <button type="button" class="btn btn-info btn-cons" ng-click="addCustomer()"><i class="icon-user"></i> New Tab</button>
                 </div>

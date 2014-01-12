@@ -2,7 +2,7 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
 <meta charset="utf-8" />
-<title>Webarch - Responsive Admin Dashboard</title>
+<title>meanPOS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <meta content="" name="description" />
 <meta content="" name="author" />
@@ -30,13 +30,29 @@
 
 <!-- BEGIN BODY -->
 <body class="ng-cloak" data-ng-app="app" data-ng-controller="appController" ng-init="init()" ng-class="classes.body_right_margin">
+
+<div id="splash-page" data-ng-hide="apploaded" class="dissolve-animation">
+    <div class="page-splash">
+        <div class="page-splash-message">
+            MEAN-POS
+        </div>
+        <div class="progress progress-striped active progress-large" id="spash-progress-bar">
+            <div data-percentage="100%" style="width: 100%;" class="progress-bar progress-bar-info"></div>
+        </div>
+
+        <!--div class="progress progress-striped active page-progress-bar">
+            <div class="bar"></div>
+        </div-->
+    </div>
+</div>
+<!--div class="splash" style="background-color: orange;width:100%;height:100%"></div-->
 <!-- INCLUDE HEADER -->
 <div data-ng-include="'/app/views/layout/header.html'"></div>
 <!-- BEGIN CONTAINER -->
+
 <div class="page-container row-fluid">
   <!-- INCLUDE SIDEBAR -->
   <div data-ng-include="'/app/views/layout/sidebar.html'"></div>
-
   <!-- BEGIN PAGE CONTAINER-->
   <div class="page-content" ng-class="classes.page_content">
 
@@ -150,6 +166,7 @@
 <script src="app/services/util.js"></script>
 <script src="app/services/global.js"></script>
 <script src="app/services/items.js"></script>
+<script src="app/services/orderTab.js"></script>
 <script src="app/services/order.js"></script>
 
 <!-- omit appRun.js in tests -->

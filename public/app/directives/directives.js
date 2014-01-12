@@ -8,27 +8,7 @@
         };
     }])
 
-    /**
-     * Order Specific
-      */
-        /*
-    .directive('orderTab', ['Order', function(Order) {
-        return {
-            restrict: "E",
-            scope: {},
-            templateUrl: "app/views/dash/tab.html",
-            link: function(scope) {
-                scope.$watch(Order.customerOrder, function() {
-                    scope.order = Order.customerOrder;
-                    console.log('ordertassss order',scope.order);
-                });
-                scope.order = Order.customerOrder;
-                console.log('ordertab order',scope.order);
-                console.log('ordertab testr',Order.testr);
-                return scope;
-            }
-        };
-    }])*/
+
 
    /**
     *  DOM effects
@@ -51,6 +31,28 @@
         }
     })
 
+    //this can be more dynamic w/ attributes defining the divs we are scrolling around
+    //very specific for one part of the app for now
+    .directive('customerTabsScroll', function() {
+        return {
+            restrict: 'A',
+            link: function(scope, $elm) {
+                var windowHeight = $(window).height() || document.getElementsByTagName('body')[0].clientHeight;
+                var targetCurrentHeight = $elm.height();
+                var totalheight = 0;
+                                    //test the target
+                var thisheight = $( ".footer-widget" ).height();
+                totalheight += thisheight;
+                                    //test the target
+                var thisheight = $( ".customer-window-wrapper .customer-header" ).height();
+                totalheight += thisheight;
+
+                var newTargetHeight = windowHeight - (totalheight - targetCurrentHeight) + 30;
+                $elm.css('height',newTargetHeight);
+            }
+        }
+    })
+
     .directive('sideMenuItem', function() {
         return {
             restrict: 'A',
@@ -60,7 +62,7 @@
                         return;
                     }
                     var parent = $elm.parent().parent();
-console.log(parent);
+
                     parent.children('li.open').children('a').children('.arrow').removeClass('open');
                     parent.children('li.open').children('.sub-menu').slideUp(200);
                     parent.children('li.open').removeClass('open');
@@ -76,12 +78,10 @@ console.log(parent);
                     } else {
                         $('.arrow', $elm).addClass("open");
                         $elm.parent().addClass("open");
-                        console.log("pong");
                         sub.slideDown(200, function () {
                             handleSidenarAndContentHeight();
                         });
                     }
-                    console.log("dong");
                     e.preventDefault();
                 });
 

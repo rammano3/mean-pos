@@ -1,7 +1,10 @@
 <div class="col-md-12 col-sm-6 spacing-bottom tab-widget slideup-animation" ng-show="viewTab">
     <div class="widget">
         <div class="widget-title dark">
-            {{ activeOrder.customerName }}'s Tab
+            {{ activeOrder.customer.customerName }}'s Tab
+            <div class="controller">
+                <a ng-click="viewTab = !viewTab" href="javascript:;" class="remove"></a>
+            </div>
         </div>
         <div class="widget-body">
             <table class="table">
@@ -13,15 +16,20 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr ng-repeat="item in activeOrder.items | groupItemsTab" >
+                <tr ng-repeat="item in activeOrder.items" >
                     <td class="unseen text-center">{{ item.quantity }}</td>
                     <td>{{ item.name }}</td>
-                    <td class="text-right">$6.00</td>
+                    <td class="text-right">{{ item.price * item.quantity | currency }}</td>
+                </tr>
+                <tr>
+                    <td><h4 class="semi-bold"></td>
+                    <td class="text-right"><strong>Subtotal</strong></td>
+                    <td class="text-right">{{ activeOrder.getTotalPrice() | currency }}</td>
                 </tr>
                 <tr>
                     <td  rowspan="4"><h4 class="semi-bold"></td>
-                    <td class="text-right"><strong>Subtotal</strong></td>
-                    <td class="text-right">$18.00</td>
+                    <td class="text-right"><strong>Tax</strong></td>
+                    <td class="text-right">{{ activeOrder.getTotalTax() | currency }}</td>
                 </tr>
                 <tr>
                     <td class="text-right no-border">
@@ -30,7 +38,7 @@
                         </div>
                     </td>
                     <td class="text-right">
-                        <strong>$18.00</strong>
+                        <strong>{{ activeOrder.getTotalPriceWithTax() | currency }}</strong>
                     </td>
                 </tr>
                 </tbody>
