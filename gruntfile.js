@@ -24,7 +24,7 @@ module.exports = function(grunt) {
             }
         },
         jshint: {
-            all: ['gruntfile.js', 'public/js/**', 'public/app/**/*.js', 'public/assets/js/*.js']
+            all: ['gruntfile.js', 'public/js/**', 'public/app/**/*.js']
         },
         nodemon: {
             dev: {
