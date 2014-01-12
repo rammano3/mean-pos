@@ -4,7 +4,7 @@
         <div class="customer-window-wrapper">
             <div class="customer-header">
                 <div class="pull-left">
-                    <input type="text" placeholder="search" ng-model="search.$" style="color:#9C9C9C">
+                    <input type="text" placeholder="search" ng-model="filters.name" style="color:#9C9C9C">
                 </div>
                 <div class="pull-right header-icon"> <a href="" class="" ng-click="addCustomer()">
                     <i class="icon-plus-sign" style="color:#6f7b8a;"></i>
@@ -16,7 +16,7 @@
                 <div id="favourites-list" customer-tabs-scroll>
                   <perfect-scrollbar class="left-nav-scroller" wheel-propagation="true" wheel-speed="50" refresh-on-change="orders" scroll-bottom-on-change="true" >
                     <div class="side-widget-content" >
-                        <div class="user-details-wrapper col-md-5" ng-repeat="orderTab in orders | filter:search" ng-click="selectCustomer(orderTab.customer)" ng-class="{active: orderTab.customer.customerID==activeOrder.customer.customerID}">
+                        <div class="user-details-wrapper col-md-5" ng-repeat="orderTab in orders" ng-controller="customerListController" ng-hide="isExcludedByFilter" ng-click="selectCustomer(orderTab.customer)" ng-class="{active: orderTab.customer.customerID==activeOrder.customer.customerID}">
                             <div class="user-details">
                                 <div class="user-name"> {{ orderTab.customer.customerName }} </div>
                                 <div class="user-more"> <span class="label label-info item-count">{{ orderTab.getTotalCount() }}</span> |<span class="money">{{ orderTab.getTotalPrice() | currency }}</span> </div>

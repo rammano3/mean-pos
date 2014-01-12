@@ -31,16 +31,51 @@
             $scope.selectCustomer(addCustomer);
         };
 
-        $scope.customerfilterFn = function(orderTab){
-          console.log("customerfilerFN ",$scope.customerFilter);
-          var found = orderTab.customer.customerName.search('/'+$scope.customerFilter+'blue/i');
-          if(found >= 0) {
-              return true;
-          }else{
-              return false;
-          }
+        //playing w/ filters
+        $scope.filters = {
+            name: ""
         };
     };
 
+    // nested in Customer controller, ng repeat controller for customer tabs
+    angular.module('app').controller(
+        "customerListController",
+        function( $scope ) {
+            // I determine if the current line item should be
+            // hidden from view due to the current search filter.
+            $scope.isExcludedByFilter = applySearchFilter();
+            // ---
+            // WATCHERS.
+            // ---
+            // Any time the search filter changes, we may have to
+            // alter the visual exlcusion of our line item.
+            $scope.$watch(
+                "filters.name",
+                function( newName, oldName ) {
+                    if ( newName === oldName ) {
+                        return;
+                    }
+                    applySearchFilter();
+                }
+            );
+            // ---
+            // PRIVATE METHODS.
+            // ---
+            // I apply the current search filter to the friend
+            // controlled by this line item.
+            function applySearchFilter() {
+                var filter = $scope.filters.name.toLowerCase();
+                var name = $scope.orderTab.customer.customerName.toLowerCase();
+                var isSubstring = ( name.indexOf( filter ) !== -1 );
+
+                // If the filter value is not a substring of the
+                // name, we have to exclude it from view.
+                $scope.isExcludedByFilter = ! isSubstring;
+
+            }
+        }
+
+    );
 
 })();
+

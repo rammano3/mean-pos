@@ -448,3 +448,6 @@ body{
     margin-left:-15px;
 }
 
+.customer-header input[type="text"]:focus{
+    border-color: #575757;
+}
