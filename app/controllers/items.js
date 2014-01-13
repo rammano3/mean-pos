@@ -4,7 +4,6 @@
 var mongoose = require('mongoose'),
     async = require('async'),
     Item = mongoose.model('Item'),
-    logp = require('consolelogpretty'),
     _ = require('underscore');
 
 /**
@@ -26,7 +25,6 @@ exports.create = function(req, res) {
     var item = new Item(req.body);
     //item.category = req.category;
     item.save(function(err) {
-        //logp.log('itemsave-err',err);
         if (err) {
             return res.send('users/signup', {
                 errors: err.errors,
