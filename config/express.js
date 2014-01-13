@@ -5,7 +5,6 @@ var express = require('express'),
     mongoStore = require('connect-mongo')(express),
     flash = require('connect-flash'),
     helpers = require('view-helpers'),
-    logp = require('consolelogpretty'),
     config = require('./config');
 
 module.exports = function(app, passport) {
