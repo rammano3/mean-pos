@@ -160,7 +160,7 @@ body{
     width: 200px;
     display: block;
     float: right;
-    height: 60px;
+    height: 47px;
     background-color: #22262e;
 }
 
@@ -170,13 +170,13 @@ body{
     font-family: 'Open Sans';
     font-size:13px;
 }
-.customer-window-wrapper .footer-widget{
+.customer-window-wrapper .tab-summary-widget{
     width: 200px;
     padding: 5px 20px;
     border-top: 1px solid #0090d9;
 }
 .customer-window-wrapper .customer-header{
-    height:58px;
+    height:45px;
 }
 
 .customer-window-wrapper  input[type="text"], .customer-window-wrapper input[type="password"], .customer-window-wrapper input[type="date"], .customer-window-wrapper input[type="datetime"], .customer-window-wrapper input[type="email"], .customer-window-wrapper input[type="number"], .customer-window-wrapper input[type="search"], .customer-window-wrapper input[type="tel"], .customer-window-wrapper input[type="time"], .customer-window-wrapper input[type="url"], .customer-window-wrapper textarea, .customer-window-wrapper select{
@@ -184,7 +184,7 @@ body{
     height:28px;
 }
 .customer-header  input[type="text"]{
-    margin: 15px 0 15px 14px;
+    margin: 7px 0 7px 14px;
     width:135px;
 }
 .customer-header .iconset{
@@ -340,26 +340,26 @@ body{
 }
 
 .customer-header .header-icon{
-    margin:20px 15px;
+    margin:12px 15px;
     font-size: 15px;
 
 }
-.footer-widget-placeholder{
+.tab-summary-widget-placeholder{
     width: 100%;
     text-align: center;
     color: #9C9C9C;
 }
 
-.footer-widget button{
+.tab-summary-widget button{
     margin-top:12px;
 }
-.footer-widget .side-widget-content{
+.tab-summary-widget .side-widget-content{
     padding-top: 5px;
 }
 .tab-widget .btn-cons{
      min-width: 0px;
  }
-.footer-widget .btn-cons{
+.tab-summary-widget .btn-cons{
     min-width: 0px;
 }
 
@@ -451,3 +451,85 @@ body{
 .customer-header input[type="text"]:focus{
     border-color: #575757;
 }
+
+.tab-summary-widget{
+    position:absolute;
+    bottom:1px;
+    display:block;
+    padding:11px 21px;
+    background-color:#22262e;
+    width: 250px;
+    clear:both;
+    text-align: center;
+}
+.tab-summary-widget .progress{
+    position: relative;
+    top: 15px;
+    width: 70%;
+}
+.tab-summary-widget a{
+    color:#8B91A0;
+}
+.tab-summary-widget a:hover,.tab-summary-widget a:hover i{
+    color:#8B91A0;
+    text-decoration:none;
+}
+.tab-summary-widget i{
+    font-size:14px;
+    color:#5e646d;
+}
+
+.tab-summary-widget .details-status{
+    background-color: #2d3139;
+    border-radius: 3px 3px 3px 3px;
+    color: #8B91A0;
+    display: inline-block;
+    font-size: 11px;
+    padding: 6px;
+    left: -22px;
+    position:relative;
+}
+
+/*skinnying header*/
+.header{
+    min-height: 45px;
+    max-height: 47px;
+}
+.header .quick-section {
+    margin-top: 10px;
+}
+.header .chat-toggler {
+    top: 6px;
+}
+.page-content .content {
+    padding-top: 62px;
+}
+.page-sidebar.mini > ul {
+    padding: 30px 0 0;
+}
+/* end region */
+
+/* iPad in portrait & landscape
+@media (min-width : 768px)
+and (max-width : 1024px)  {*/
+@media (min-width: 768px) and (max-width: 1024px) {
+    .tiles .heading {
+        font-size: 20px;
+    }
+    .tiles .tiles-body {
+        padding: 7px 15px 5px 15px;
+    }
+    .item-desc {
+        font-size: 9px;
+    }
+}
+
+/* iPad in landscape */
+@media (min-width : 768px)
+and (max-width : 1024px)
+and (orientation : landscape) { /* STYLES GO HERE */}
+
+/* iPad in portrait */
+@media (min-width : 768px)
+and (max-width : 1024px)
+and (orientation : portrait) { /* STYLES GO HERE */ }
